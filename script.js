@@ -1,34 +1,34 @@
 // Массив с вопросами, вариантами ответов и правильными ответами
 let questions = [
     {
-        question: "Какой язык программирования вы изучаете?",
-        options: ['JavaScript', 'Python', 'PHP', 'C++'],
-        correctAnswer: 'JavaScript',
+        question: "Сколько всего независимых государств в мире?",
+        options: ['193', '256', '195', '206'],
+        correctAnswer: '193',
     },
     {
-        question: "Какой язык программирования вы изучаете?",
-        options: ['JavaScript', 'Python', 'PHP', 'C++'],
-        correctAnswer: 'JavaScript',
+        question: "Какой основной язык в Бразилии?",
+        options: ['Португальский', 'Английский', 'Турецкий', 'Немецкий'],
+        correctAnswer: 'Португальский',
     },
     {
-        question: "Какой язык программирования вы изучаете?",
-        options: ['JavaScript', 'Python', 'PHP', 'C++'],
-        correctAnswer: 'JavaScript',
+        question: "Сколько будет: 9 + (9 ÷ 9) + (9 × 9) – 9?",
+        options: ['67', '82', '87', '99'],
+        correctAnswer: '82',
     },
     {
-        question: "Какой язык программирования вы изучаете?",
-        options: ['JavaScript', 'Python', 'PHP', 'C++'],
-        correctAnswer: 'JavaScript',
+        question: "Сколько лет длилась столетняя война?",
+        options: ['111', '100', '121', '116'],
+        correctAnswer: '116',
     },
     {
-        question: "Какой язык программирования вы изучаете?",
-        options: ['JavaScript', 'Python', 'PHP', 'C++'],
-        correctAnswer: 'JavaScript',
+        question: "Кто доказал существование электромагнитных волн?",
+        options: ['И. Ньютон', 'А. Эйнштейн', 'Г. Р. Герц', 'Д. К. Максвелл'],
+        correctAnswer: 'Г. Р. Герц',
     },
     {
-        question: "Какой язык программирования вы изучаете?",
-        options: ['JavaScript', 'Python', 'PHP', 'C++'],
-        correctAnswer: 'JavaScript',
+        question: "Какого языка программирования не существует?",
+        options: ['SQL', 'С#', 'CH+', 'C++'],
+        correctAnswer: 'CH+',
     },
 ]
 
