@@ -15,6 +15,21 @@ let questions = [
         options: ['JavaScript', 'Python', 'PHP', 'C++'],
         correctAnswer: 'JavaScript',
     },
+    {
+        question: "Какой язык программирования вы изучаете?",
+        options: ['JavaScript', 'Python', 'PHP', 'C++'],
+        correctAnswer: 'JavaScript',
+    },
+    {
+        question: "Какой язык программирования вы изучаете?",
+        options: ['JavaScript', 'Python', 'PHP', 'C++'],
+        correctAnswer: 'JavaScript',
+    },
+    {
+        question: "Какой язык программирования вы изучаете?",
+        options: ['JavaScript', 'Python', 'PHP', 'C++'],
+        correctAnswer: 'JavaScript',
+    },
 ]
 
 let currentQuestion = 0; // Текущий вопрос
@@ -44,7 +59,35 @@ function displayQuestion() {
         console.log(target.textContent);
         // Вызовем функцию проверки ответов и перехода к следующему вопросу
         nextQuestion(target.textContent);
-    });
+    }, {once: true});
+}
+
+// Функция для перехода к следующему вопросу
+function nextQuestion(answer) {
+    // Если ответ равен корректному то
+    if(answer === questions[currentQuestion].correctAnswer) {
+        // Увеличиваем на единицу количество верных ответов
+        correctAnswers++; 
+    }
+    currentQuestion++; // Переход к следующему вопросу
+    // Если номер текущего вопроса меньше количества вопросов то отображаем следующий вопрос
+    if(currentQuestion < questions.length) {
+        displayQuestion(); // Отображаем следующий вопрос
+    } else {
+        displayResult();    
+    }
+}
+
+// Функция отображенитя результата теста
+function displayResult() {
+    const questionElem = document.getElementById('question');
+    const optionsElem = document.getElementById('options');
+    const resultElem = document.getElementById('result');
+    const container = document.getElementById('container');
+    questionElem.style.display = 'none';
+    container.style.display = 'none';
+    optionsElem.style.display = 'none';
+    resultElem.textContent = `Правильных ответов: ${correctAnswers} из ${questions.length}`;
 }
 
 displayQuestion();

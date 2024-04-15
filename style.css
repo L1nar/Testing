@@ -41,7 +41,9 @@ body {
     margin-left: 30px;
 }
 
-.result {}
+.result {
+    font-size: 48px;
+}
 
 .btn {
     color: white;
