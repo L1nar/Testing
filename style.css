@@ -10,11 +10,11 @@ html {
 body {
     font-family: "Comfortaa", sans-serif;
     margin: 0;
+    background: url(img/bg.jpg) no-repeat center/cover;
 }
 
 .wrapper {
     min-height: 100%;
-    background: url(img/bg.jpg) no-repeat center/cover;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -27,6 +27,7 @@ body {
     padding: 40px 80px 60px 80px;
     background-color: rgb(10, 3, 32);
     border-radius: 50px;
+    display: none;
 }
 
 .title {}
@@ -59,7 +60,53 @@ body {
     transition: all 0.4s;
 }
 
+.quiz-container {
+    transform: scale(1);
+    transition: all 0.4s;
+}
+
 .btn:hover {
     transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+.btn {
+    transform: scale(1);
+    transition: all 0.2s;
+}
+
+.reg {}
+
+.title-reg {}
+
+.input {
+    border-radius: 20px;
+    border: 2px solid rgb(12, 1, 102);
+    color: rgb(50, 32, 153);
+    font-size: 18px;
+    background-color: rgb(17, 5, 70);
+    padding: 10px 10px;
+}
+
+.start {
+    font-size: 24px;
+    padding: 10px 40px;
+    border: 2px solid rgb(12, 1, 102);
+    background-color: rgb(17, 5, 70);
+    border-radius: 20px;
+    color: rgb(50, 32, 153);
+    margin-top: 30px;
+}
+
+.start:hover {
+    transform: scale(1.1);
+    transition: all 0.2s;
+    color: rgb(39, 18, 163);
+    border: 2px solid rgb(15, 0, 126);
+    background-color: rgb(23, 6, 95);
+}
+
+.start {
+    transform: scale(1);
     transition: all 0.2s;
 }

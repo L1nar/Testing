@@ -59,22 +59,22 @@ function displayQuestion() {
         console.log(target.textContent);
         // Вызовем функцию проверки ответов и перехода к следующему вопросу
         nextQuestion(target.textContent);
-    }, {once: true});
+    }, { once: true });
 }
 
 // Функция для перехода к следующему вопросу
 function nextQuestion(answer) {
     // Если ответ равен корректному то
-    if(answer === questions[currentQuestion].correctAnswer) {
+    if (answer === questions[currentQuestion].correctAnswer) {
         // Увеличиваем на единицу количество верных ответов
-        correctAnswers++; 
+        correctAnswers++;
     }
     currentQuestion++; // Переход к следующему вопросу
     // Если номер текущего вопроса меньше количества вопросов то отображаем следующий вопрос
-    if(currentQuestion < questions.length) {
+    if (currentQuestion < questions.length) {
         displayQuestion(); // Отображаем следующий вопрос
     } else {
-        displayResult();    
+        displayResult();
     }
 }
 
@@ -84,10 +84,44 @@ function displayResult() {
     const optionsElem = document.getElementById('options');
     const resultElem = document.getElementById('result');
     const container = document.getElementById('container');
+    const gradeElem = document.getElementById('grade');
     questionElem.style.display = 'none';
     container.style.display = 'none';
     optionsElem.style.display = 'none';
     resultElem.textContent = `Правильных ответов: ${correctAnswers} из ${questions.length}`;
+    if (correctAnswers == 0) {
+        gradeElem.textContent = 'Ваша оценка 2'
+    }
+    if (correctAnswers == 1) {
+        gradeElem.textContent = 'Ваша оценка 2'
+    }
+    if (correctAnswers == 2) {
+        gradeElem.textContent = 'Ваша оценка 2'
+    }
+    if (correctAnswers == 3) {
+        gradeElem.textContent = 'Ваша оценка 3'
+    }
+    if (correctAnswers == 4) {
+        gradeElem.textContent = 'Ваша оценка 3'
+    }
+    if (correctAnswers == 5) {
+        gradeElem.textContent = 'Ваша оценка 4'
+    }
+    if (correctAnswers == 6) {
+        gradeElem.textContent = 'Ваша оценка 5'
+    }
 }
+
+const reg = document.getElementById('reg');
+const start = document.getElementById('start');
+const input = document.getElementById('input');
+start.addEventListener('click', (e) => {
+    if (input.value === '') {
+        e.preventDefault();
+    } else {
+        reg.style.display = 'none';
+        container.style.display = 'block';
+    }
+})
 
 displayQuestion();
