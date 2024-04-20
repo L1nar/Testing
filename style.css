@@ -108,5 +108,8 @@ body {
 
 .start {
     transform: scale(1);
+    color: rgb(50, 32, 153);
+    border: 2px solid rgb(12, 1, 102);
+    background-color: rgb(17, 5, 70);
     transition: all 0.2s;
 }
