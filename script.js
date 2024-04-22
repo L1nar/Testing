@@ -32,8 +32,12 @@ let questions = [
     },
 ]
 
+let wrongAnswers = [];
+
+const restart = document.getElementById('restart-btn');
 let currentQuestion = 0; // Текущий вопрос
 let correctAnswers = 0; // Кол-во правильных ответов
+restart.style.display = 'none';
 
 function displayQuestion() {
     let questionElem = document.getElementById('question'); // Получить блоке куда размещать вопрос
@@ -68,6 +72,8 @@ function nextQuestion(answer) {
     if (answer === questions[currentQuestion].correctAnswer) {
         // Увеличиваем на единицу количество верных ответов
         correctAnswers++;
+    } else {
+        wrongAnswers.push(questions[currentQuestion]);
     }
     currentQuestion++; // Переход к следующему вопросу
     // Если номер текущего вопроса меньше количества вопросов то отображаем следующий вопрос
@@ -80,6 +86,7 @@ function nextQuestion(answer) {
 
 // Функция отображенитя результата теста
 function displayResult() {
+    console.log(nextQuestion);
     const questionElem = document.getElementById('question');
     const optionsElem = document.getElementById('options');
     const resultElem = document.getElementById('result');
@@ -88,29 +95,35 @@ function displayResult() {
     questionElem.style.display = 'none';
     container.style.display = 'none';
     optionsElem.style.display = 'none';
-    resultElem.textContent = `Правильных ответов: ${correctAnswers} из ${questions.length}`;
+    restart.style.display = 'block';
+    resultElem.textContent = `${input.value}, у вас правильных ответов: ${correctAnswers} из ${questions.length}`
     if (correctAnswers == 0) {
-        gradeElem.textContent = 'Ваша оценка 2'
+        gradeElem.textContent = 'Ваша оценка 2 (0%)'
     }
     if (correctAnswers == 1) {
-        gradeElem.textContent = 'Ваша оценка 2'
+        gradeElem.textContent = 'Ваша оценка 2 (16.67%)'
     }
     if (correctAnswers == 2) {
-        gradeElem.textContent = 'Ваша оценка 2'
+        gradeElem.textContent = 'Ваша оценка 2 (33.33%)'
     }
     if (correctAnswers == 3) {
-        gradeElem.textContent = 'Ваша оценка 3'
+        gradeElem.textContent = 'Ваша оценка 3 (50%)'
     }
     if (correctAnswers == 4) {
-        gradeElem.textContent = 'Ваша оценка 3'
+        gradeElem.textContent = 'Ваша оценка 3 (66.67%)'
     }
     if (correctAnswers == 5) {
-        gradeElem.textContent = 'Ваша оценка 4'
+        gradeElem.textContent = 'Ваша оценка 4 (83.33%)'
     }
     if (correctAnswers == 6) {
-        gradeElem.textContent = 'Ваша оценка 5'
+        gradeElem.textContent = 'Ваша оценка 5 (100%)'
     }
 }
+
+function refresh() {
+    window.location.reload();
+}
+restart.addEventListener("click", refresh);
 
 const reg = document.getElementById('reg');
 const start = document.getElementById('start');

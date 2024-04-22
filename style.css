@@ -96,6 +96,8 @@ body {
     border-radius: 20px;
     color: rgb(50, 32, 153);
     margin-top: 30px;
+    transform: scale(1);
+    transition: all 0.2s;
 }
 
 .start:hover {
@@ -106,10 +108,33 @@ body {
     background-color: rgb(23, 6, 95);
 }
 
-.start {
-    transform: scale(1);
-    color: rgb(50, 32, 153);
+.restart-btn {
+    font-size: 24px;
+    padding: 10px 40px;
     border: 2px solid rgb(12, 1, 102);
     background-color: rgb(17, 5, 70);
+    border-radius: 20px;
+    color: rgb(50, 32, 153);
+    margin-top: 30px;
+}
+
+
+.restart-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.2s;
+    color: rgb(39, 18, 163);
+    border: 2px solid rgb(15, 0, 126);
+    background-color: rgb(23, 6, 95);
+}
+
+.restart-btn {
+    font-size: 24px;
+    padding: 10px 40px;
+    border: 2px solid rgb(12, 1, 102);
+    background-color: rgb(17, 5, 70);
+    border-radius: 20px;
+    color: rgb(50, 32, 153);
+    margin-top: 30px;
+    transform: scale(1);
     transition: all 0.2s;
 }
